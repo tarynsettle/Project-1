@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create a New Entry 
+{% endblock %}
+
+{% block body %}
+    <h1>Create a New Entry</h1>
+    <h6>Use Markdown formatting.</h6><br>
+
+    {% for message in messages %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    
+    <form class="textbox" action="{% url 'encyclopedia:newentry' %}" method="post">
+        {% csrf_token %}
+        <div class="textboxT">
+            {{ formT }}
+        </div>
+
+        
+        <div class="textboxC">
+            <p>{{ formC }}</p>
+        </div>
+        <input class="button" type="submit">
+    </form>
+
+    
+{% endblock %}

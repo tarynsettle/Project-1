@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block body %}
+
+    <h1>404</h1>
+
+    That entry doesn't exist. <a href="{% url 'encyclopedia:random' %}">Try again</a>, or <a href="{% url 'encyclopedia:newentry' %}">create a new entry</a>.
+
+{% endblock %}
